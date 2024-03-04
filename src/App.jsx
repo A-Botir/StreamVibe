@@ -1,45 +1,217 @@
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, useLocation } from "react-router-dom";
 import { Home, MovieShow, Subscription, Support } from "./pages";
 import Logo from "./images/icon/header/Logo.svg";
 import Bell from "./images/icon/header/Bell.svg";
 import Search from "./images/icon/header/Search.svg";
+import Burger from "./images/icon/header/burger.svg";
+import Facebook from "./images/icon//footer/facebook.svg";
+import Inter from "./images/icon//footer/inter.svg";
+import Twitter from "./images/icon//footer/twitter.svg";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="bg-[#141414] w-full h-screen">
-      <header className="flex justify-around items-center pt-[22px]">
-        <NavLink to="/">
-          <img src={Logo} alt="logo icon" className="w-[200] h-[60px]" />
-        </NavLink>
-        <ul className="flex justify-center gap-[6px] bg-[#0F0F0F] p-[10px] rounded-xl border-4 border-[#1F1F1F] max-w-[572px]">
-          <li className="px-6 py-[14px] rounded-lg text-[#BFBFBF] text-[18px] cursor-pointer hover:text-white hover:font-medium hover:bg-[#141414]">
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li className="px-6 py-[14px] rounded-lg text-[#BFBFBF] text-[18px] cursor-pointer hover:text-white hover:font-medium hover:bg-[#141414]">
-            <NavLink to="/movieshow">Movie&Shows</NavLink>
-          </li>
-          <li className="px-6 py-[14px] rounded-lg text-[#BFBFBF] text-[18px] cursor-pointer hover:text-white hover:font-medium hover:bg-[#141414]">
-            <NavLink to="/support">Support</NavLink>
-          </li>
-          <li className="px-6 py-[14px] rounded-lg text-[#BFBFBF] text-[18px] cursor-pointer hover:text-white hover:font-medium hover:bg-[#141414]">
-            <NavLink to="/subscriptions">Subscriptions</NavLink>
-          </li>
-        </ul>
-        <div className="flex gap-[14px]">
-          <button>
-            <img src={Search} alt="search icon" />
+    <div className="h-screen w-full bg-[#141414]">
+      <div className="container">
+        <header className="flex items-center justify-between sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
+          <NavLink to="/">
+            <img
+              src={Logo}
+              alt="logo icon"
+              className="h-12 w-[132px] sm:h-9 sm:w-[116px] lg:h-12 lg:w-40 xl:h-[60px] xl:w-[200px]"
+            />
+          </NavLink>
+          <ul className="flex justify-center gap-3 rounded-md border border-[#1F1F1F] bg-[#0F0F0F] p-[6px] sm:hidden lg:gap-4 lg:rounded-lg lg:border-2 lg:p-2 xl:gap-[30px] xl:rounded-xl xl:border-4 xl:p-[10px]">
+            <li
+              className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
+                location.pathname === "/"
+                  ? "bg-[#1A1A1A] px-3 font-medium text-white lg:px-4 xl:px-6"
+                  : "text-[#BFBFBF]"
+              } cursor-pointer text-[14px] hover:bg-[#141414] hover:font-medium hover:text-white md:text-[12px] xl:text-[18px]`}
+            >
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li
+              className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
+                location.pathname === "/movieshow"
+                  ? "bg-[#1A1A1A] px-3 font-medium text-white lg:px-4 xl:px-6"
+                  : "text-[#BFBFBF]"
+              } cursor-pointer text-[14px] hover:bg-[#141414] hover:font-medium hover:text-white md:text-[12px] xl:text-[18px]`}
+            >
+              <NavLink to="/movieshow">Movie&Shows</NavLink>
+            </li>
+            <li
+              className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
+                location.pathname === "/support"
+                  ? "bg-[#1A1A1A] px-3 font-medium text-white lg:px-4 xl:px-6"
+                  : "text-[#BFBFBF]"
+              } cursor-pointer text-[14px] hover:bg-[#141414] hover:font-medium hover:text-white md:text-[12px] xl:text-[18px]`}
+            >
+              <NavLink to="/support">Support</NavLink>
+            </li>
+            <li
+              className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
+                location.pathname === "/subscriptions"
+                  ? "bg-[#1A1A1A] px-3 font-medium text-white lg:px-4 xl:px-6"
+                  : "text-[#BFBFBF]"
+              } cursor-pointer text-[14px] hover:bg-[#141414] hover:font-medium hover:text-white md:text-[12px] xl:text-[18px]`}
+            >
+              <NavLink to="/subscriptions">Subscriptions</NavLink>
+            </li>
+          </ul>
+          <div className="flex gap-[14px] sm:hidden">
+            <button>
+              <img
+                src={Search}
+                alt="search icon"
+                className="md:h-4 md:w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8"
+              />
+            </button>
+            <button>
+              <img
+                src={Bell}
+                alt="bell icon"
+                className="md:h-4 md:w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8"
+              />
+            </button>
+          </div>
+          <button className="hidden h-12 w-12 rounded-md border-[3px] border-[#262626] bg-[#1A1A1A] p-3 sm:block">
+            <img src={Burger} alt="menu icon" />
           </button>
-          <button>
-            <img src={Bell} alt="bell icon" />
-          </button>
+        </header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movieshow" element={<MovieShow />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/subscriptions" element={<Subscription />} />
+        </Routes>
+      </div>
+      <div className="footer bg-[#0F0F0F] pb-4 pt-8 sm:pb-5 sm:pt-[50px] lg:pb-10 lg:pt-20 xl:pb-[50px] xl:pt-[100px]">
+        <div className="container">
+          <footer className=" items-left flex justify-between sm:mb-[50px] md:mb-16 lg:mb-20 xl:mb-[100px]">
+            <div className="grid w-full grid-cols-3 gap-y-[30px] sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-6">
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Home
+                </h4>
+                <ul>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Categories
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Devices
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Pricing
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    FAQ
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Movies
+                </h4>
+                <ul>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Gernes
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Trending
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    New Release
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Popular
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Shows
+                </h4>
+                <ul>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Gernes
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Trending
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    New Release
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Popular
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Support
+                </h4>
+                <ul>
+                  <li className="text-[14px] font-medium leading-loose  text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Contact Us
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Subscription
+                </h4>
+                <ul>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Plans
+                  </li>
+                  <li className="text-[14px] font-medium leading-loose text-[#999999] lg:text-[16px] xl:text-[18px]">
+                    Features
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold sm:mb-4 sm:text-[16px] md:mb-[18px] lg:mb-5 lg:text-[18px] xl:mb-6 xl:text-[20px]">
+                  Connect With Us
+                </h4>
+                <div className="flex gap-[10px]">
+                  <img
+                    src={Facebook}
+                    alt="messenger icon"
+                    className="h-[44px] w-[44px] rounded-md bg-[#1A1A1A] p-3"
+                  />
+                  <img
+                    src={Twitter}
+                    alt="messenger icon"
+                    className="h-[44px] w-[44px] rounded-md bg-[#1A1A1A] p-3"
+                  />
+                  <img
+                    src={Inter}
+                    alt="messenger icon"
+                    className="h-[44px] w-[44px] rounded-md bg-[#1A1A1A] p-3"
+                  />
+                </div>
+              </div>
+            </div>
+          </footer>
+          <div className="flex items-start justify-between border-t border-[#262626] py-5 text-[14px] sm:flex-col xl:p-6">
+            <p className="text-[#999999] sm:mb-5">
+              @2023 streamvib, All Rights Reserved
+            </p>
+            <p className="flex gap-4 text-base sm:gap-3">
+              <p className="cursor-pointer border-r border-r-[#262626] pr-4  text-[14px] text-[#999999] sm:pr-3 sm:text-[12px]">
+                Terms of Use
+              </p>
+              <p className="cursor-pointer border-r border-r-[#262626] pr-4  text-[14px] text-[#999999] sm:pr-3 sm:text-[12px]">
+                Privacy Policy
+              </p>
+              <p className="cursor-pointer text-[14px] text-[#999999]  sm:text-[12px]">
+                Cookie Policy
+              </p>
+            </p>
+          </div>
         </div>
-      </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movieshow" element={<MovieShow />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/subscriptions" element={<Subscription />} />
-      </Routes>
+      </div>
     </div>
   );
 }
