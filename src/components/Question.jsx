@@ -28,7 +28,7 @@ const Question = () => {
   };
 
   return (
-    <section className="mb-[100px] sm:mb-[80px] lg:mb-[120px] xl:mb-[150px]">
+    <section class="mb-[100px] sm:mb-[80px] lg:mb-[120px] xl:mb-[150px]">
       <div className="mb-12 flex items-end justify-between sm:mb-10 sm:flex-col sm:items-start lg:mb-[60px] xl:mb-[80px]">
         <div>
           <h2 className="text-[24px] font-bold sm:mb-2 sm:text-[24px] lg:mb-[10px] lg:text-[28px] xl:mb-[14px] xl:text-[38px]">
