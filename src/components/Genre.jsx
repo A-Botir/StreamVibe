@@ -1,7 +1,87 @@
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Left from "../images/icon/hero/left_arrow.svg";
 import Right from "../images/icon/hero/right_arrow.svg";
+import { BASE_URL } from "../constants/constanst";
 
 const Genre = () => {
+  const [genres, setGenres] = useState([]);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const fetchMovie = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/genre/movie/list`, {
+          params: {
+            api_key: "67b950c76555ffb6628f502a1eb9921a",
+          },
+        });
+        if (response.status !== 200)
+          throw new Error("Could not get genre movie list");
+        setGenres(response.data.genres);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchMovie();
+  }, []);
+
+  const settings = {
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="mb-90px sm:mb-[50px] lg:mb-[120px] xl:mb-[150px]">
       <div className="mb-12 flex items-center justify-between sm:mb-10 lg:mb-[60px]  xl:mb-[80px]">
@@ -14,51 +94,26 @@ const Genre = () => {
             make you think, or a documentary to learn something new
           </p>
         </div>
-        <div className="flex items-center gap-[10px] rounded-lg bg-[#0F0F0F] p-[10px] sm:hidden sm:p-0 lg:gap-3 lg:rounded-[10px] lg:p-3 xl:gap-4 xl:rounded-xl xl:p-4">
-          <button className="h-[40px] w-[40px] rounded-md bg-[#1A1A1A] p-2 lg:h-[44px] lg:w-[44px] lg:rounded-md lg:p-[10px] xl:h-14 xl:w-14 xl:rounded-lg xl:p-[14px]">
-            <img src={Left} alt="left icon" />
-          </button>
-          <div className="h-[2px] w-[81px] bg-[#333333] bg-[#E60000]"></div>
-          <button className="h-[40px] w-[40px] rounded-md bg-[#1A1A1A] p-2 lg:h-[44px] lg:w-[44px] lg:rounded-md lg:p-[10px] xl:h-14 xl:w-14 xl:rounded-lg xl:p-[14px]">
-            <img src={Right} alt="right icon" />
-          </button>
-        </div>
       </div>
-      <div className="grid grid-cols-5 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:gap-[30px]">
-        <div className="rounded-[10px] bg-[#262626] p-[30px] sm:p-5 lg:p-6 xl:rounded-xl xl:p-[30px]">
-          <div className="grid grid-cols-2 gap-[5px]">
-            <img
-              src=""
-              alt="card img"
-              className="h-[80px] w-[75px] rounded-md sm:h-[67px] sm:w-[66px] lg:h-[102px] lg:w-[93px] xl:h-[123px] xl:w-[115px] xl:rounded-[10px]"
-            />
-            <img
-              src=""
-              alt="card img"
-              className="h-[80px] w-[75px] rounded-md sm:h-[67px] sm:w-[66px] lg:h-[102px] lg:w-[93px] xl:h-[123px] xl:w-[115px] xl:rounded-[10px]"
-            />
-            <img
-              src=""
-              alt="card img"
-              className="h-[80px] w-[75px] rounded-md sm:h-[67px] sm:w-[66px] lg:h-[102px] lg:w-[93px] xl:h-[123px] xl:w-[115px] xl:rounded-[10px]"
-            />
-            <img
-              src=""
-              alt="card img"
-              className="h-[80px] w-[75px] rounded-md sm:h-[67px] sm:w-[66px] lg:h-[102px] lg:w-[93px] xl:h-[123px] xl:w-[115px] xl:rounded-[10px]"
-            />
+      <Slider ref={sliderRef} {...settings}>
+        {genres.map((genre) => (
+          <div
+            className="mx-3 rounded-[10px] bg-[#262626] p-[30px] sm:p-5 lg:p-6 xl:rounded-xl xl:p-[30px]"
+            key={genre.id}
+          >
+            <div className="grid grid-cols-2 gap-[5px]"></div>
+            <div className="flex items-center justify-between">
+              <p className="text-[14px] font-semibold lg:text-[16px] xl:text-[18px]">
+                {genre.name}
+              </p>
+              <button className="h-[22px] w-[22px] sm:h-5 sm:w-5 lg:h-6 lg:w-6 xl:h-[30px] xl:w-[30px]">
+                <img src={Right} alt="right icon" />
+              </button>
+            </div>
           </div>
-          <div className="flex items-center justify-between">
-            <p className="text-[14px] font-semibold lg:text-[16px] xl:text-[18px]">
-              Action
-            </p>
-            <button className="h-[22px] w-[22px] sm:h-5 sm:w-5 lg:h-6 lg:w-6 xl:h-[30px] xl:w-[30px]">
-              <img src={Right} alt="right icon" />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="mt-6 hidden h-[2px] w-[81px] bg-[#333333] bg-[#E60000] sm:block"></div>
+        ))}
+      </Slider>
+      <div className="mt-6 hidden h-[2px] w-[81px] bg-[#333333] sm:block"></div>
     </section>
   );
 };

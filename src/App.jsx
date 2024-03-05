@@ -1,5 +1,11 @@
 import { NavLink, Routes, Route, useLocation } from "react-router-dom";
-import { Home, MovieShow, Subscription, Support } from "./pages";
+import {
+  Home,
+  MovieShow,
+  MoviesOpenPage,
+  Subscription,
+  Support,
+} from "./pages";
 import Logo from "./images/icon/header/Logo.svg";
 import Bell from "./images/icon/header/Bell.svg";
 import Search from "./images/icon/header/Search.svg";
@@ -7,9 +13,16 @@ import Burger from "./images/icon/header/burger.svg";
 import Facebook from "./images/icon/footer/facebook.svg";
 import Inter from "./images/icon/footer/inter.svg";
 import Twitter from "./images/icon/footer/twitter.svg";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+  };
+
   return (
     <div
       className={`w-full bg-[#141414] ${
@@ -66,7 +79,14 @@ function App() {
             </li>
           </ul>
           <div className="flex gap-[14px] sm:hidden">
-            <button>
+            {isSearchVisible && (
+              <input
+                type="search"
+                className="rounded-xl border-[#1F1F1F] bg-[#0F0F0F] px-3 py-2 outline-none"
+                placeholder="Search..."
+              />
+            )}
+            <button onClick={toggleSearch}>
               <img
                 src={Search}
                 alt="search icon"
@@ -88,6 +108,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movieshow" element={<MovieShow />} />
+          <Route path="/movieshow/:id" element={<MoviesOpenPage />} />
           <Route path="/support" element={<Support />} />
           <Route path="/subscriptions" element={<Subscription />} />
         </Routes>
@@ -204,7 +225,7 @@ function App() {
             <p className="text-[#999999] sm:mb-5">
               @2023 streamvib, All Rights Reserved
             </p>
-            <p className="flex gap-4 text-base sm:gap-3">
+            <div className="flex gap-4 text-base sm:gap-3">
               <p className="cursor-pointer border-r border-r-[#262626] pr-4  text-[14px] text-[#999999] sm:pr-3 sm:text-[12px]">
                 Terms of Use
               </p>
@@ -214,7 +235,7 @@ function App() {
               <p className="cursor-pointer text-[14px] text-[#999999]  sm:text-[12px]">
                 Cookie Policy
               </p>
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -223,5 +244,6 @@ function App() {
 }
 
 // api_key="67b950c76555ffb6628f502a1eb9921a"
+// img = https://media.themoviedb.org/t/p/w220_and_h330_face
 
 export default App;

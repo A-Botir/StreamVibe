@@ -28,7 +28,7 @@ const Question = () => {
   };
 
   return (
-    <section class="mb-[100px] sm:mb-[80px] lg:mb-[120px] xl:mb-[150px]">
+    <section className="mb-[100px] sm:mb-[80px] lg:mb-[120px] xl:mb-[150px]">
       <div className="mb-12 flex items-end justify-between sm:mb-10 sm:flex-col sm:items-start lg:mb-[60px] xl:mb-[80px]">
         <div>
           <h2 className="text-[24px] font-bold sm:mb-2 sm:text-[24px] lg:mb-[10px] lg:text-[28px] xl:mb-[14px] xl:text-[38px]">
@@ -49,16 +49,16 @@ const Question = () => {
       >
         {questions.map((question, index) => (
           <div key={index}>
-            <div class="p-[22px] sm:p-5 lg:p-6 xl:p-[30px]">
+            <div className="p-[22px] sm:p-5 lg:p-6 xl:p-[30px]">
               <h2
-                class="mb-0 flex  items-center gap-2"
+                className="mb-0 flex  items-center gap-2"
                 id={`heading${index + 1}`}
               >
                 <span className="rounded-lg bg-[#262626] p-[14px] font-semibold sm:rounded-md sm:p-[12px] lg:p-[16px] xl:rounded-[10px] xl:p-[20px]">
                   {`0${index + 1}`}
                 </span>
                 <button
-                  class="flex w-full items-center justify-between"
+                  className="flex w-full items-center justify-between"
                   type="button"
                   data-twe-collapse-init
                   data-twe-target={`#collapse${index + 1}`}
@@ -67,7 +67,7 @@ const Question = () => {
                   onClick={() => toggleExpansion(index)}
                 >
                   <span>{question}</span>
-                  <span class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
+                  <span className="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6">
                     {isExpanded[index] ? (
                       <img src={Minus} alt="icon" />
                     ) : (
@@ -78,12 +78,12 @@ const Question = () => {
               </h2>
               <div
                 id={`collapse${index + 1}`}
-                class={isExpanded[index] ? "" : "!visible hidden"}
+                className={isExpanded[index] ? "" : "!visible hidden"}
                 data-twe-collapse-item
                 aria-labelledby={`heading${index + 1}`}
                 data-twe-parent="#accordionExample"
               >
-                <div class="pl-14 text-[14px] text-[#999999] lg:text-[16px] xl:text-[18px]">
+                <div className="pl-14 text-[14px] text-[#999999] lg:text-[16px] xl:text-[18px]">
                   StreamVibe is a streaming service that allows you to watch
                   movies and shows on demand.
                 </div>
