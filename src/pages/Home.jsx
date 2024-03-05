@@ -1,8 +1,12 @@
+import Banner from "../components/Banner.jsx";
+import Genre from "../components/Genre.jsx";
+
 const Home = () => {
   return (
-    <div>
-      <p></p>
-    </div>
+    <>
+      <Banner />
+      <Genre />
+    </>
   );
 };
 

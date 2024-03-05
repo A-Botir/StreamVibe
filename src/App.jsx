@@ -4,14 +4,14 @@ import Logo from "./images/icon/header/Logo.svg";
 import Bell from "./images/icon/header/Bell.svg";
 import Search from "./images/icon/header/Search.svg";
 import Burger from "./images/icon/header/burger.svg";
-import Facebook from "./images/icon//footer/facebook.svg";
-import Inter from "./images/icon//footer/inter.svg";
-import Twitter from "./images/icon//footer/twitter.svg";
+import Facebook from "./images/icon/footer/facebook.svg";
+import Inter from "./images/icon/footer/inter.svg";
+import Twitter from "./images/icon/footer/twitter.svg";
 
 function App() {
   const location = useLocation();
   return (
-    <div className="h-screen w-full bg-[#141414]">
+    <div className="w-full bg-[#141414]">
       <div className="container">
         <header className="flex items-center justify-between sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
           <NavLink to="/">
