@@ -1,0 +1,28 @@
+<svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_288_4653_dd" x="4.800049" y="1.199951" width="20.589600" height="27.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feGaussianBlur in="BackgroundImage" stdDeviation="4"/>
+			<feComposite in2="SourceAlpha" operator="in" result="effect_backgroundBlur_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_backgroundBlur_1" result="shape"/>
+		</filter>
+		<clipPath id="clip288_4652">
+			<rect id="Frame" width="20.589504" height="27.000000" transform="translate(4.800049 1.199951)" fill="white" fill-opacity="0"/>
+		</clipPath>
+		<clipPath id="clip288_4651">
+			<rect id="Icon" width="30.000000" height="30.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip288_4651)">
+		<rect id="Frame" width="20.589504" height="27.000000" transform="translate(4.800049 1.199951)" fill="#FFFFFF" fill-opacity="0"/>
+		<g clip-path="url(#clip288_4652)">
+			<g filter="url(#filter_288_4653_dd)">
+				<path id="Vector" d="M4.80005 14.6873C4.80005 11.0772 4.80005 7.45862 4.80005 3.84851C4.80005 2.16995 5.77002 1.19995 7.44019 1.19995C12.5432 1.19995 17.6462 1.19995 22.7495 1.19995C24.4194 1.19995 25.3896 2.16995 25.3896 3.84851C25.3896 11.0941 25.3896 18.3311 25.3896 25.5767C25.3896 27.2215 24.4111 28.2 22.7747 28.2C17.6548 28.2 12.5432 28.2 7.42334 28.2C5.78687 28.2 4.80859 27.2131 4.80859 25.5767C4.80005 21.9497 4.80005 18.3143 4.80005 14.6873ZM12.7542 25.0031C14.323 25.0031 15.875 25.0031 17.427 25.0031C17.427 24.4802 17.427 23.9994 17.427 23.5017C15.8496 23.5017 14.3062 23.5017 12.7542 23.5017C12.7542 24.0163 12.7542 24.5055 12.7542 25.0031Z" fill="#E60000" fill-opacity="1.000000" fill-rule="nonzero"/>
+			</g>
+			<path id="Vector" d="M4.80005 14.6873L4.80005 3.84851C4.80005 2.16995 5.77002 1.19995 7.44019 1.19995L22.7495 1.19995C24.4194 1.19995 25.3896 2.16995 25.3896 3.84851L25.3896 25.5767C25.3896 27.2215 24.4111 28.2 22.7747 28.2L7.42334 28.2C5.78687 28.2 4.80859 27.2131 4.80859 25.5767C4.80005 21.9497 4.80005 18.3143 4.80005 14.6873ZM5.80005 9.26788L5.80005 3.84851Q5.80005 3.01999 6.21436 2.60788Q6.62427 2.19995 7.44019 2.19995L22.7495 2.19995Q23.5652 2.19995 23.9753 2.60788Q24.3896 3.01999 24.3896 3.84851L24.3896 25.5767Q24.3896 26.3925 23.9817 26.7984Q23.5779 27.2 22.7747 27.2L7.42334 27.2Q6.62012 27.2 6.21631 26.7984Q5.80859 26.3925 5.80859 25.5767L5.80103 20.1322L5.80005 14.6871L5.80005 9.26788ZM18.427 26.0031L18.427 22.5017L11.7542 22.5017L11.7542 26.0031L18.427 26.0031ZM13.7542 25.0031L12.7542 25.0031L12.7542 23.5017L17.427 23.5017L17.427 25.0031L13.7542 25.0031Z" fill="#E60000" fill-opacity="1.000000" fill-rule="evenodd"/>
+		</g>
+	</g>
+</svg>
