@@ -3,11 +3,13 @@ import Play from "../images/icon/hero/play_icon.svg";
 
 const Banner = () => {
   return (
-    <div className="m-auto mb-[125px] mt-[81px] max-w-[75%] sm:mb-[100px] sm:mt-[54px] sm:max-w-full lg:mb-[150px] lg:mt-[102px] xl:mb-[200px] xl:mt-[102px]">
+    <div
+      className={`m-auto mb-[125px] mt-[81px] max-w-[75%] sm:mb-[100px] sm:mt-[54px] sm:max-w-full lg:mb-[150px] lg:mt-[102px] xl:mb-[200px] xl:mt-[102px]`}
+    >
       <img
         src={HeroPlay}
         alt="hero main img"
-        className=" lg:h-300px mx-auto mb-[75px] h-[250px] w-[250px] sm:mb-[50px] sm:h-[200px] sm:w-[200px] lg:mb-[100px] lg:w-[300px] xl:mb-32 xl:h-[470px] xl:w-[470px] xl:max-w-[66%]"
+        className="lg:h-300px mx-auto mb-[75px] h-[250px] w-[250px] sm:mb-[50px] sm:h-[200px] sm:w-[200px] lg:mb-[100px] lg:w-[300px] xl:mb-32 xl:h-[470px] xl:w-[470px] xl:max-w-[66%]"
       />
       <h1 className="mb-[10px] text-center font-bold sm:text-[28px] lg:text-[48px] xl:mb-[14px] xl:text-[58px]">
         The Best Streaming Experience

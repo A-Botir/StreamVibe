@@ -11,7 +11,13 @@ import Twitter from "./images/icon/footer/twitter.svg";
 function App() {
   const location = useLocation();
   return (
-    <div className="w-full bg-[#141414]">
+    <div
+      className={`w-full bg-[#141414] ${
+        location.pathname === "/"
+          ? "bg-[url('./images/back/Banner_img.png')] bg-contain bg-no-repeat"
+          : ""
+      }`}
+    >
       <div className="container">
         <header className="flex items-center justify-between sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
           <NavLink to="/">
