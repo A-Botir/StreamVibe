@@ -18,9 +18,14 @@ import { useState } from "react";
 function App() {
   const location = useLocation();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -32,7 +37,7 @@ function App() {
       }`}
     >
       <div className="container">
-        <header className="flex items-center justify-between sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
+        <header className="flex items-center justify-between py-10 sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
           <NavLink to="/">
             <img
               src={Logo}
@@ -40,7 +45,9 @@ function App() {
               className="h-12 w-[132px] sm:h-9 sm:w-[116px] lg:h-12 lg:w-40 xl:h-[60px] xl:w-[200px]"
             />
           </NavLink>
-          <ul className="flex justify-center gap-3 rounded-md border border-[#1F1F1F] bg-[#0F0F0F] p-[6px] sm:hidden lg:gap-4 lg:rounded-lg lg:border-2 lg:p-2 xl:gap-[30px] xl:rounded-xl xl:border-4 xl:p-[10px]">
+          <ul
+            className={`flex justify-center gap-3 rounded-md border border-[#1F1F1F] bg-[#0F0F0F] p-[6px] sm:hidden lg:gap-4 lg:rounded-lg lg:border-2 lg:p-2 xl:gap-[30px] xl:rounded-xl xl:border-4 xl:p-[10px] ${isMenuOpen ? "" : "sm:hidden"}`}
+          >
             <li
               className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
                 location.pathname === "/"
@@ -101,7 +108,10 @@ function App() {
               />
             </button>
           </div>
-          <button className="hidden h-12 w-12 rounded-md border-[3px] border-[#262626] bg-[#1A1A1A] p-3 sm:block">
+          <button
+            className="hidden h-12 w-12 rounded-md border-[3px] border-[#262626] bg-[#1A1A1A] p-3 sm:block"
+            onClick={toggleMenu}
+          >
             <img src={Burger} alt="menu icon" />
           </button>
         </header>

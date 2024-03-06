@@ -1,9 +1,15 @@
+import Tariff from "../components/Tariff";
+import Fade from "../components/Fade";
+import OurPlan from "../components/OurPlan";
+
 const Subscription = () => {
   return (
-    <div>
-      <p>Subscription</p>
-    </div>
-  )
-}
+    <section className="mt-[100px]">
+      <Tariff />
+      <OurPlan />
+      <Fade />
+    </section>
+  );
+};
 
-export default Subscription
+export default Subscription;

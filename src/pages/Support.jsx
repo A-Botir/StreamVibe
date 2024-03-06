@@ -5,8 +5,8 @@ import SuppImg from "../images/picture/suppImg.png";
 const Support = () => {
   return (
     <section className="mt-[70px] sm:mt-[40px] lg:mt-[100px] xl:mt-[140px]">
-      <div className="mb-[70px] grid grid-cols-5 items-start justify-between gap-[50px] sm:mb-[40px] sm:flex-col lg:mb-[100px] xl:mb-[140px]">
-        <div className="col-span-2">
+      <div className="mb-[70px] grid grid-cols-5 items-start justify-between gap-[50px] sm:mb-[40px] sm:grid-cols-1 lg:mb-[100px] xl:mb-[140px]">
+        <div className="col-span-2 sm:m-auto">
           <h2 className="mb-[10px] text-[34px] font-bold sm:text-[28px] lg:text-[38px] xl:mb-3 xl:text-[48px]">
             Welcome to our support page!
           </h2>
@@ -14,13 +14,13 @@ const Support = () => {
             We're here to help you with any problems you may be having with our
             product.
           </p>
-          <div className="max-h-[330px] w-full bg-[url('./images/picture/suppImg.png')] bg-cover bg-no-repeat lg:h-[592px] xl:h-[739px]"></div>
+          <div className="h-[325px] w-full rounded-[4px] border-4 border-[#262626] bg-[url('./images/picture/suppImg.png')] bg-cover bg-center bg-no-repeat sm:ml-5 sm:h-[250px] xl:h-[500px]"></div>
         </div>
         <form
           action="#"
           className="col-span-3 flex grow flex-col gap-5 rounded-[10px] bg-[#0F0F0F] p-8 sm:p-6 lg:p-[40px] xl:gap-[50px] xl:rounded-xl xl:p-[50px]"
         >
-          <div className="flex gap-5 xl:gap-[50px]">
+          <div className="flex gap-5 sm:flex-col xl:gap-[50px]">
             <label
               htmlFor="firstname"
               className="grow text-[14px] font-semibold lg:text-[16px] xl:text-[18px]"
@@ -48,7 +48,7 @@ const Support = () => {
               />
             </label>
           </div>
-          <div className="flex gap-5 xl:gap-[50px]">
+          <div className="flex gap-5 sm:flex-col xl:gap-[50px]">
             <label
               htmlFor="mail"
               className="grow text-[14px] font-semibold lg:text-[16px] xl:text-[18px]"
@@ -62,7 +62,7 @@ const Support = () => {
                 className="mt-3 block w-full rounded-md border border-[#262626] bg-[#141414] p-4 text-[14px] xl:mt-4 xl:rounded-lg xl:p-5 xl:text-[18px]"
               />
             </label>
-            <div className="flex w-[48%] items-end gap-2">
+            <div className="flex w-[48%] items-end gap-2 sm:w-full">
               <select
                 name=""
                 className="block h-[58px] rounded-md border border-[#262626] bg-[#141414] p-[6px] text-[16px] lg:p-[10px] xl:rounded-lg xl:p-3 xl:text-[20px]"
@@ -103,7 +103,7 @@ const Support = () => {
               className="mt-3 block h-[110px] w-full rounded-md border border-[#262626] bg-[#141414] p-4 text-[14px] placeholder:align-top lg:h-[129px] xl:mt-4 xl:h-[163px] xl:rounded-lg xl:p-5 xl:text-[18px]"
             />
           </label>
-          <div className="item-center flex items-center justify-between">
+          <div className="item-center :gap-[50px] :gap-[50px] flex items-center justify-between sm:flex-col">
             <label
               htmlFor="checker"
               className="text-[14px] font-semibold text-[#999999] lg:text-[16px] xl:text-[18px]"
@@ -117,7 +117,7 @@ const Support = () => {
               />
               I agree with Terms of Use and Privacy Policy
             </label>
-            <button className="h-[50px] rounded-md bg-[#E60000] px-5 py-[14px] text-[14px] font-semibold sm:mt-5 sm:max-w-[140px]  xl:rounded-lg xl:px-[24px] xl:py-[18px] xl:text-[18px]">
+            <button className="h-[50px] rounded-md bg-[#E60000] px-5 py-[14px] text-[14px] font-semibold sm:mt-5 sm:w-full  xl:rounded-lg xl:px-[24px] xl:py-[18px] xl:text-[18px]">
               Send Message
             </button>
           </div>
