@@ -1,7 +1,7 @@
 import { Collapse, initTWE } from "../../node_modules/tw-elements";
 import Plus from "../images/icon/main/plus.svg";
 import Minus from "../images/icon/main/minus.svg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const questions = [
   "What is StreamVibe?",
@@ -16,6 +16,10 @@ const questions = [
 
 const Question = () => {
   initTWE({ Collapse });
+
+  useEffect(() => {
+    setIsExpanded(Array(questions.length).fill(false));
+  }, []);
 
   const [isExpanded, setIsExpanded] = useState(
     Array(questions.length).fill(false),
@@ -78,7 +82,7 @@ const Question = () => {
               </h2>
               <div
                 id={`collapse${index + 1}`}
-                className={isExpanded[index] ? "" : "!visible hidden"}
+                className={`collapse-panel ${isExpanded[index] ? "visible" : "hidden"}`}
                 data-twe-collapse-item
                 aria-labelledby={`heading${index + 1}`}
                 data-twe-parent="#accordionExample"

@@ -6,6 +6,7 @@ import {
   Subscription,
   Support,
 } from "./pages";
+import BurgerMenu from "./components/BurgerMenu";
 import Logo from "./images/icon/header/Logo.svg";
 import Bell from "./images/icon/header/Bell.svg";
 import Search from "./images/icon/header/Search.svg";
@@ -114,6 +115,13 @@ function App() {
           >
             <img src={Burger} alt="menu icon" />
           </button>
+          <BurgerMenu
+            isMenuOpen={isMenuOpen}
+            toggleMenu={toggleMenu}
+            location={location}
+            isSearchVisible={isSearchVisible}
+            toggleSearch={toggleSearch}
+          />
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -235,7 +243,7 @@ function App() {
             <p className="text-[#999999] sm:mb-5">
               @2023 streamvib, All Rights Reserved
             </p>
-            <div className="flex gap-4 text-base sm:gap-3">
+            <div className="text-base flex gap-4 sm:gap-3">
               <p className="cursor-pointer border-r border-r-[#262626] pr-4  text-[14px] text-[#999999] sm:pr-3 sm:text-[12px]">
                 Terms of Use
               </p>

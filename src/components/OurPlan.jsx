@@ -185,7 +185,7 @@ const OurPlan = () => {
         </tbody>
       </table>
       <div className="hidden sm:block">
-        <div className="flex gap-1 rounded-lg border border-[#262626] bg-[#0F0F0F] p-2 xl:h-[60px] xl:rounded-[10px]">
+        <div className="flex gap-1 rounded-lg border border-[#262626] bg-[#0F0F0F] p-2 sm:mb-5 xl:h-[60px] xl:rounded-[10px]">
           <button
             className={`rounded-md ${
               selectedPlan === "Basic"
@@ -198,13 +198,13 @@ const OurPlan = () => {
           </button>
           <button
             className={`rounded-md ${
-              selectedPlan === "Standard"
+              selectedPlan === "Standart"
                 ? "bg-[#1F1F1F] text-white"
                 : "text-[#999999]"
             } px-4 py-2 hover:bg-[#1F1F1F] hover:text-white xl:rounded-[10px] xl:px-[24px] xl:py-[14px]`}
             onClick={() => handPlanChange("Standard")}
           >
-            Standard
+            Standart
           </button>
           <button
             className={`rounded-md ${
@@ -216,6 +216,81 @@ const OurPlan = () => {
           >
             Premium
           </button>
+        </div>
+        <div className="grid grid-cols-2 gap-x-5 rounded-xl border border-[#262626] bg-[#0F0F0F] p-6">
+          <p className=" text-[14px] font-medium text-[#999999]">Price</p>
+          <p className=" text-[14px] font-medium text-[#999999]">Free trial</p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "$9.99/Month" : ""}
+            {selectedPlan === "Standard" ? "$12.99/Month" : ""}
+            {selectedPlan === "Premium" ? "$14.99/Month" : ""}
+          </p>
+          <p className=" text-[14px] font-medium ">7 Days</p>
+          <p className="col-span-2 mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Content
+          </p>
+          <p className="col-span-2 text-[14px] font-medium ">
+            {selectedPlan === "Basic"
+              ? "Access to a wide selection of movies and shows, including some new releases."
+              : ""}
+            {selectedPlan === "Standard"
+              ? "Access to a wider selection of movies and shows, including most new releases and exclusive content "
+              : ""}
+            {selectedPlan === "Premium"
+              ? "Access to a widest selection of movies and shows, including all new releases and Offline Viewing"
+              : ""}
+          </p>
+          <p className="col-span-2 mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Devices
+          </p>
+          <p className="col-span-2 mb-6 text-[14px] font-medium ">
+            Watch on {selectedPlan === "Basic" ? "One " : ""}
+            {selectedPlan === "Standard" ? "Two " : ""}
+            {selectedPlan === "Premium" ? "Four " : ""}
+            device simultaneously
+          </p>
+          <p className=" mb-1 text-[14px] font-medium text-[#999999]">
+            Cancel Anytime
+          </p>
+          <p className=" mb-1 text-[14px] font-medium text-[#999999]">HDR</p>
+          <p className=" text-[14px] font-medium ">Yes</p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "No" : ""}
+            {selectedPlan === "Standard" ? "Yes" : ""}
+            {selectedPlan === "Premium" ? "Yes" : ""}
+          </p>
+          <p className=" mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Dolby Atmos
+          </p>
+          <p className=" mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Ad - Free
+          </p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "No" : ""}
+            {selectedPlan === "Standard" ? "Yes" : ""}
+            {selectedPlan === "Premium" ? "Yes" : ""}
+          </p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "No" : ""}
+            {selectedPlan === "Standard" ? "Yes" : ""}
+            {selectedPlan === "Premium" ? "Yes" : ""}
+          </p>
+          <p className=" mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Offline Viewing
+          </p>
+          <p className=" mb-1 mt-6 text-[14px] font-medium text-[#999999]">
+            Family Sharing
+          </p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "No" : ""}
+            {selectedPlan === "Standard" ? "Yes, for select titles." : ""}
+            {selectedPlan === "Premium" ? "Yes, for all titles" : ""}
+          </p>
+          <p className=" text-[14px] font-medium ">
+            {selectedPlan === "Basic" ? "No" : ""}
+            {selectedPlan === "Standard" ? "Yes, up to 5 family members." : ""}
+            {selectedPlan === "Premium" ? "Yes, up to 6 family members." : ""}
+          </p>
         </div>
       </div>
     </section>
