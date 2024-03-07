@@ -2,12 +2,10 @@ import Hero from "../components/Hero.jsx";
 import Fade from "../components/Fade.jsx";
 import Movies from "../components/Movies.jsx";
 import Shows from "../components/Shows.jsx";
-// import axios from "axios";
-// import { BASE_URL } from "../constants/constanst";
-// import { useEffect, useState } from "react";
 
 const MovieShow = ({ searchMovies }) => {
   console.log(searchMovies);
+
   return (
     <>
       <Hero />

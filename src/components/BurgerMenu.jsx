@@ -1,6 +1,14 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const BurgerMenu = ({ isMenuOpen, toggleMenu, location, isSearchVisible }) => {
+const BurgerMenu = ({ isMenuOpen, toggleMenu, location, handleSearch }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    const query = event.target.value;
+    setInputValue(query);
+    handleSearch(query);
+  };
   return (
     <div className={`hidden ${isMenuOpen ? "sm:block" : "hidden"}`}>
       <div className="w- flex flex-col items-center rounded-xl bg-[#1F1F1F] p-3">
@@ -8,6 +16,7 @@ const BurgerMenu = ({ isMenuOpen, toggleMenu, location, isSearchVisible }) => {
           type="search"
           className="mb-2 rounded-xl border-[#1F1F1F] bg-[#0F0F0F] px-3 py-2 outline-none"
           placeholder="Search..."
+          onChange={handleInputChange}
         />
         <ul className="flex flex-col items-center gap-3">
           <li

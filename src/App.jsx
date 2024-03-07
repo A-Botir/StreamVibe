@@ -1,4 +1,10 @@
-import { NavLink, Routes, Route, useLocation } from "react-router-dom";
+import {
+  NavLink,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import {
   Home,
   MovieShow,
@@ -23,12 +29,24 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [inputValue, setInputValue] = useState(null);
   const [searchMovies, setSearchMovies] = useState([]);
-  console.log(searchMovies);
+  const navigate = useNavigate();
+
+  const handleInputChange = (query) => {
+    setInputValue(query);
+    handleSearch(query);
+  };
 
   const handleChangeSearch = (ev) => {
     setInputValue(ev.target.value);
   };
-  const handleSearch = async () => {
+
+  const handleKeyDown = (ev) => {
+    if (ev.key === "Enter") {
+      navigate(`/movieshow?query=${inputValue}`);
+    }
+  };
+
+  const handleSearch = async (query) => {
     try {
       const response = await axios.get(`${BASE_URL}/search/movie`, {
         params: {
@@ -121,6 +139,7 @@ function App() {
                 placeholder="Search..."
                 id="search"
                 ref={inputField}
+                onKeyDown={handleKeyDown}
                 onChange={handleChangeSearch}
               />
             )}
@@ -148,10 +167,9 @@ function App() {
         </header>
         <BurgerMenu
           isMenuOpen={isMenuOpen}
-          toggleMenu={toggleMenu}
+          toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
           location={location}
-          isSearchVisible={isSearchVisible}
-          toggleSearch={toggleSearch}
+          handleSearch={handleInputChange}
         />
         <Routes>
           <Route path="/" element={<Home />} />
