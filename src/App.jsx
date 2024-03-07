@@ -92,7 +92,7 @@ function App() {
             />
           </NavLink>
           <ul
-            className={`flex justify-center gap-3 rounded-md border border-[#1F1F1F] bg-[#0F0F0F] p-[6px] sm:hidden lg:gap-4 lg:rounded-lg lg:border-2 lg:p-2 xl:gap-[30px] xl:rounded-xl xl:border-4 xl:p-[10px] ${isMenuOpen ? "" : "sm:hidden"}`}
+            className={`ml-36 flex justify-center gap-3 rounded-md border border-[#1F1F1F] bg-[#0F0F0F] p-[6px] sm:hidden lg:gap-4 lg:rounded-lg lg:border-2 lg:p-2 xl:gap-[30px] xl:rounded-xl xl:border-4 xl:p-[10px] ${isMenuOpen ? "" : "sm:hidden"}`}
           >
             <li
               className={`rounded-lg py-2 lg:py-3 xl:py-[14px] ${
@@ -131,7 +131,7 @@ function App() {
               <NavLink to="/subscriptions">Subscriptions</NavLink>
             </li>
           </ul>
-          <div className="flex gap-[14px] sm:hidden">
+          <div className="flex w-[296px] justify-end gap-[14px] sm:hidden">
             {isSearchVisible && (
               <input
                 type="search"
