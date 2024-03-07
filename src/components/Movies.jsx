@@ -65,10 +65,21 @@ const Movies = () => {
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
+          
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {mygenres.slice(4, 13).map((mygenre) => (
             <SwiperSlide>
@@ -79,7 +90,7 @@ const Movies = () => {
                 <img
                   src="https://picsum.photos/200/250?random=1"
                   alt="genres img"
-                  className="mb-2 rounded-[10px]"
+                  className="mb-2 rounded-[10px] "
                 />
                 <p className="text-[14px]">{mygenre.name}</p>
               </div>
@@ -93,10 +104,21 @@ const Movies = () => {
         </h2>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
+          
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
@@ -134,10 +156,21 @@ const Movies = () => {
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
+          
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {movies.map((movie) => (
             <SwiperSlide>
@@ -164,8 +197,19 @@ const Movies = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={4}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+          }}
           navigation
-          pagination={{ clickable: true }}
+          
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}

@@ -49,10 +49,20 @@ const Genre = () => {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        breakpoints={{
+          365: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 5,
+          },
+        }}
       >
         {genres.map((genre) => (
           <SwiperSlide>

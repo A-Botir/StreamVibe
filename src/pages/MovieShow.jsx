@@ -6,46 +6,30 @@ import Shows from "../components/Shows.jsx";
 // import { BASE_URL } from "../constants/constanst";
 // import { useEffect, useState } from "react";
 
-const MovieShow = () => {
-  // const [movies, setMovie] = useState([]);
-  // console.log(movies);
-  // useEffect(() => {
-  //   axios
-  //     .get(`${BASE_URL}/movie/popular`, {
-  //       params: {
-  //         api_key: "67b950c76555ffb6628f502a1eb9921a",
-  //         include_video: true,
-  //       },
-  //     })
-  //     .then(function (res) {
-  //       setMovie(res.data.results);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     })
-  //     .finally(function () {});
-  // }, []);
+const MovieShow = ({ searchMovies }) => {
+  console.log(searchMovies);
   return (
     <>
       <Hero />
       <div className="mb-[100px] sm:mb-[80px] lg:mb-[120px] xl:mb-[150px]">
-        <Movies />
-        {/* <div className="grid grid-cols-4 gap-3">
-          {movies.map((movie) => (
+        <div className="mb-20 grid grid-cols-5 gap-2 sm:mb-[50px] sm:grid-cols-2 lg:mb-[90px] xl:mb-[115px]">
+          {searchMovies.map((movie) => (
             <div
-              className="rounded-lg border border-[text-[#999999]] px-4 py-3"
               key={movie.id}
+              className="rounded-[10px] border border-[#262626] bg-[#1A1A1A] p-4 sm:p-3 xl:rounded-xl xl:p-5"
             >
               <img
                 src={`https://media.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
-                alt="img"
-                className="mb-4"
+                alt="movie img"
+                className="mb-2 rounded-[10px]"
               />
-              <h4 className="mb-4">{movie.original_title}</h4>
-              <span>{movie.release_date}</span>
+              <p className="rounded-2xl bg-[#141414] px-[10px] py-[6px] text-center text-[12px] leading-[12px] text-[#BFBFBF] sm:px-2 lg:px-[14px]">
+                {movie.title}
+              </p>
             </div>
           ))}
-        </div> */}
+        </div>
+        <Movies />
         <Shows />
       </div>
       <Fade />

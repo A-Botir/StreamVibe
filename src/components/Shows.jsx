@@ -68,10 +68,20 @@ const Shows = () => {
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {tvgenre.slice(4, 13).map((mygenre) => (
             <SwiperSlide>
@@ -99,10 +109,20 @@ const Shows = () => {
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {trendshows.map((trend) => (
             <SwiperSlide>
@@ -137,10 +157,20 @@ const Shows = () => {
           spaceBetween={50}
           slidesPerView={5}
           navigation
-          pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {shows.map((show) => (
             <SwiperSlide>
@@ -168,7 +198,17 @@ const Shows = () => {
           spaceBetween={50}
           slidesPerView={4}
           navigation
-          pagination={{ clickable: true }}
+          breakpoints={{
+            365: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
