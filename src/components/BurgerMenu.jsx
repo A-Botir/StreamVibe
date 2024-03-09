@@ -10,7 +10,9 @@ const BurgerMenu = ({ isMenuOpen, toggleMenu, location, handleSearch }) => {
     handleSearch(query);
   };
   return (
-    <div className={`hidden ${isMenuOpen ? "sm:block" : "hidden"}`}>
+    <div
+      className={`hidden ${isMenuOpen ? "sm:block" : "hidden"} absolute right-8 top-[100px] z-[4] w-[85%]`}
+    >
       <div className="w- flex flex-col items-center rounded-xl bg-[#1F1F1F] p-3">
         <input
           type="search"

@@ -44,9 +44,14 @@ const Hero = () => {
       {movies.slice(5, 14).map((movie) => (
         <SwiperSlide>
           <section
-            className={`mb-[90px] rounded-xl bg-cover bg-[url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}')] pb-4 pt-[335px] sm:mb-[80px] sm:pt-[276px] lg:mb-[100px] lg:pt-[434px] xl:mb-[180px] xl:pb-5 xl:pt-[504px]`}
+            className={`relative mb-[90px] rounded-xl pb-4 pt-[335px] sm:mb-[80px] sm:pt-[276px] lg:mb-[100px] lg:pt-[434px] xl:mb-[180px] xl:pb-5 xl:pt-[504px]`}
             key={movie.id}
           >
+            <img
+              src={`https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.backdrop_path}`}
+              alt="backdrop"
+              className="absolute left-0 top-0 z-[-2] h-full w-full rounded-xl"
+            />
             <div className="mx-auto w-[75%]">
               <h2 className="text-6 mb-3 text-center font-bold lg:text-[30px] xl:text-[38px]">
                 {movie.title}

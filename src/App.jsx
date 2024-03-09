@@ -82,7 +82,7 @@ function App() {
           : ""
       }`}
     >
-      <div className="container">
+      <div className="container sm:relative">
         <header className="flex items-center justify-between py-10 sm:pb-[12px] sm:pt-10 md:gap-5 md:py-[16px] lg:py-[18px] xl:py-[22px]">
           <NavLink to="/">
             <img
